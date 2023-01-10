@@ -145,7 +145,7 @@ spec:
           resources:
             requests:
               cpu: 100m
-              memory: 300Mi
+              memory: 600Mi
           ports:
           - containerPort: 8085
             name: metrics
