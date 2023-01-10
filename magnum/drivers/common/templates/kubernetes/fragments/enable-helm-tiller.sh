@@ -140,8 +140,8 @@ spec:
       serviceAccountName: tiller
       tolerations:
       # Make sure the pod can be scheduled on master kubelet.
-      - effect: NoSchedule
-        operator: Exists
+      - key: node-role.kubernetes.io/master
+        effect: NoSchedule
       # Mark the pod as a critical add-on for rescheduling.
       - key: CriticalAddonsOnly
         operator: Exists

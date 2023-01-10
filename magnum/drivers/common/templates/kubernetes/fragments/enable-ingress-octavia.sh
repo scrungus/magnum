@@ -74,8 +74,8 @@ spec:
     spec:
       serviceAccountName: octavia-ingress-controller
       tolerations:
-        - effect: NoSchedule # Make sure the pod can be scheduled on master kubelet.
-          operator: Exists
+        - key: node-role.kubernetes.io/master
+          effect: NoSchedule
         - key: CriticalAddonsOnly # Mark the pod as a critical add-on for rescheduling.
           operator: Exists
         - effect: NoExecute

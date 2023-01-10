@@ -211,8 +211,6 @@ spec:
         node-role.kubernetes.io/master: ""
       hostNetwork: true
       tolerations:
-        - effect: NoSchedule
-          operator: Exists
         - key: CriticalAddonsOnly
           operator: Exists
         - effect: NoExecute
@@ -329,8 +327,8 @@ spec:
       hostNetwork: true
       serviceAccountName: magnum-auto-healer
       tolerations:
-        - effect: NoSchedule
-          operator: Exists
+        - key: node-role.kubernetes.io/master
+          effect: NoSchedule
         - key: CriticalAddonsOnly
           operator: Exists
         - effect: NoExecute

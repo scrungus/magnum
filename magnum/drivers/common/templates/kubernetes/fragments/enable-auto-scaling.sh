@@ -122,8 +122,6 @@ spec:
       securityContext:
         runAsUser: 1001
       tolerations:
-        - effect: NoSchedule
-          operator: Exists
         - key: CriticalAddonsOnly
           operator: Exists
         - effect: NoExecute

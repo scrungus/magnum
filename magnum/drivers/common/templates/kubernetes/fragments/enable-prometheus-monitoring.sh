@@ -404,8 +404,8 @@ spec:
     spec:
       tolerations:
         # Make sure calico/node gets scheduled on all nodes.
-        - effect: NoSchedule
-          operator: Exists
+        - key: node-role.kubernetes.io/master
+          effect: NoSchedule
         # Mark the pod as a critical add-on for rescheduling.
         - key: CriticalAddonsOnly
           operator: Exists
